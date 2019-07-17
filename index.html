@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">
+    	<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Tests unitaires</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -24,10 +24,49 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+            <div class="slides">
+                <section>
+                    <video src="videos/Intro.mp4" 
+                           type="video/mp4" 
+                           style="heigth: 100%; width: 100%;" 
+                           loop controls autoplay muted/>
+                </section>
+    
+                <section data-background-image="images/codeBackground.jpg">
+                    <style>
+                        div.social {
+                            margin-top: 100px;
+                        }
+
+                        img.centeredImage {
+                            vertical-align: middle;
+                        }
+
+                        img.centeredImageRoundedCorners {
+                            vertical-align: middle;
+                            border-radius: 50%;
+                        }
+                    </style>
+                    <div class="social">
+                        <h2>
+                            <img class="centeredImage" src="images/GitHub.png" alt="GitHub" width="200" height="82" />
+                            <a href="https://github.com/RodgerLeblanc">RodgerLeblanc</a>
+                            <img class="centeredImageRoundedCorners" src="images/GitHubProfile.jpg" alt="GitHub Profile" width="256" height="256">
+                        </h2>
+                        <h2>
+                            <img class="centeredImage" src="images/LinkedIn.png" alt="LinkedIn" width="330" height="82" />
+                            <a href="https://www.linkedin.com/in/roger-leblanc-530a3569/">Roger Leblanc</a>
+                            <img class="centeredImageRoundedCorners" src="images/LinkedInProfile.png" alt="LinkedIn Profile" width="256" height="256">
+                        </h2>
+                    </div>
+
+                    <aside class="notes">
+                        <a href="https://github.com/CodeursTroisRivieres/UnitTestsPresentation">
+                            Cette présentation est hostée sur GitHub!
+                        </a>
+                    </aside>
+                </section>
+            </div>
 		</div>
 
 		<script src="js/reveal.js"></script>
@@ -42,7 +81,7 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
+                ]
 			});
 		</script>
 	</body>
