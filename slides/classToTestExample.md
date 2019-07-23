@@ -1,6 +1,7 @@
 ### Exemple - Classe à tester
 
-
-
-Note:
-À la base, un test unitaire doit être...
+<html>
+  <div>
+    <img class="centeredImage" src="images/classToTest.png" width="1359" height="900" />
+  </div>
+</html>
