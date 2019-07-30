@@ -6,7 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CellNinja.Parser\CellNinja.Parser.csproj" />
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="SimpleInjector" Version="4.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CellNinja.Configurations\CellNinja.Configurations.csproj" />
+    <ProjectReference Include="..\CellNinja.DependencyInjection\CellNinja.DependencyInjection.csproj" />
+    <ProjectReference Include="..\CellNinja.MovieSearch\CellNinja.MovieSearch.csproj" />
   </ItemGroup>
 
 </Project>
