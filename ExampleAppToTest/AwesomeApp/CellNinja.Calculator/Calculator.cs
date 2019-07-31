@@ -7,12 +7,12 @@ namespace CellNinja.Calculator
     {
         public int Add(int start, int toAdd)
         {
-            return checked(start + toAdd);
+            return start + toAdd;
         }
 
         public int Add(IEnumerable<int> numbers)
         {
-            return checked(numbers.Sum());
+            return numbers.Sum();
         }
 
         public int Substract(int start, int toSubstract)
@@ -22,7 +22,7 @@ namespace CellNinja.Calculator
 
         public int Multiply(int start, int multiplyBy)
         {
-            return start * multiplyBy;
+            return checked(start * multiplyBy);
         }
 
         public double Divide(int start, int divideBy)

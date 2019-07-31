@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CellNinja.Configurations;
 using CellNinja.DependencyInjection;
+using CellNinja.MovieSearch.Clients;
 using CellNinja.MovieSearch.Repos;
 using Microsoft.Extensions.Configuration;
 using RestSharp;
@@ -23,6 +24,7 @@ namespace AwesomeApp
         {
             DependencyInjection.RegisterSingleton<IConfiguration>(() => GetConfiguration());
             DependencyInjection.RegisterSingleton<IApiKeyConfiguration>(() => GetApiKeyConfiguration());
+            DependencyInjection.Register<IClient, Client>();
             DependencyInjection.Register<IRestClient>(() => new RestClient());
             DependencyInjection.Register<IMovieRepo, MovieRepo>();
             DependencyInjection.Register<Chooser>();
