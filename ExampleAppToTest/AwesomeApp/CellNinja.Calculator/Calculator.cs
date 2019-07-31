@@ -1,23 +1,23 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CellNinja.Math
+namespace CellNinja.Calculator
 {
-    public class Math
+    public class Calculator
     {
         public int Add(int start, int toAdd)
         {
-            return start + toAdd;
+            return checked(start + toAdd);
         }
 
         public int Add(IEnumerable<int> numbers)
         {
-            return numbers.Sum();
+            return checked(numbers.Sum());
         }
 
         public int Substract(int start, int toSubstract)
         {
-            return start - toSubstract;
+            return toSubstract - start;
         }
 
         public int Multiply(int start, int multiplyBy)

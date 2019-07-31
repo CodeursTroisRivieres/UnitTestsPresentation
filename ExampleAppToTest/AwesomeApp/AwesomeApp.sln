@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CellNinja.MovieSearch", "Ce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CellNinja.Configurations", "CellNinja.Configurations\CellNinja.Configurations.csproj", "{8AFEBC9F-8A13-46E9-B000-26200EB2A327}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellNinja.DependencyInjection", "CellNinja.DependencyInjection\CellNinja.DependencyInjection.csproj", "{15F00439-03E5-47DA-8F90-7B1D7E2C1A2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CellNinja.DependencyInjection", "CellNinja.DependencyInjection\CellNinja.DependencyInjection.csproj", "{15F00439-03E5-47DA-8F90-7B1D7E2C1A2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellNinja.MovieSearch.Tests", "CellNinja.MovieSearch.Tests\CellNinja.MovieSearch.Tests.csproj", "{C4E11900-D534-4BDB-A15B-8C51C0F665BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CellNinja.MovieSearch.Tests", "CellNinja.MovieSearch.Tests\CellNinja.MovieSearch.Tests.csproj", "{C4E11900-D534-4BDB-A15B-8C51C0F665BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellNinja.Math", "CellNinja.Math\CellNinja.Math.csproj", "{DE363F0E-C741-46D8-9E58-B67BF81247B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CellNinja.Calculator", "CellNinja.Calculator\CellNinja.Calculator.csproj", "{DE363F0E-C741-46D8-9E58-B67BF81247B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellNinja.Math.Tests", "CellNinja.Math.Tests\CellNinja.Math.Tests.csproj", "{BA748DC2-5A23-419F-BAE8-72AEC2ED526F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CellNinja.Calculator.Tests", "CellNinja.Calculator.Tests\CellNinja.Calculator.Tests.csproj", "{BA748DC2-5A23-419F-BAE8-72AEC2ED526F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

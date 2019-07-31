@@ -4,7 +4,7 @@
 - Découvrir les bugs plus tôt
 - Tester les cas spéciaux
 - Ne plus avoir peur de changer du code legacy
-- Force à séparer les dépendences
+- Force à séparer les dépendances
 - Automatisation des tests
 
 Note:

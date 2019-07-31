@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CellNinja.Configurations;
+using CellNinja.MovieSearch.Clients;
 using CellNinja.MovieSearch.Models;
 using RestSharp;
 
@@ -15,26 +16,32 @@ namespace CellNinja.MovieSearch.Repos
         private const string SearchQueryParameterName = "s";
         private string _apiKey;
 
-        public MovieRepo(IRestClient client, IApiKeyConfiguration apiKeyConfiguration)
+        public MovieRepo(IClient client, IApiKeyConfiguration apiKeyConfiguration)
         {
-            Client = client;
+            if (apiKeyConfiguration == null)
+            {
+                throw new ArgumentNullException(nameof(apiKeyConfiguration));
+            }
+
+            Client = client ?? throw new ArgumentNullException(nameof(client));
             Client.BaseUrl = new Uri("http://www.omdbapi.com/");
 
-            _apiKey = apiKeyConfiguration.ApiKeys
+            _apiKey = apiKeyConfiguration.ApiKeys?
                 .Where(kv => kv.Key == OmdbApiKeyConfigurationName)
                 .Select(kv => kv.Value)
                 .First();
         }
 
-        private IRestClient Client { get; }
+        private IClient Client { get; }
 
         public async Task<IEnumerable<Movie>> SearchAsync(string search)
         {
-            var request = new RestRequest
+            if (String.IsNullOrWhiteSpace(search))
             {
-                RequestFormat = DataFormat.Json
-            };
+                throw new ArgumentException("The search query cannot be empty.");
+            }
 
+            var request = new RestRequest { RequestFormat = DataFormat.Json };
             request.AddQueryParameter(ApiKeyQueryParameterName, _apiKey);
             request.AddQueryParameter(SearchQueryParameterName, search);
 
