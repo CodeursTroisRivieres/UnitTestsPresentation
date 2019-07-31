@@ -7,3 +7,9 @@ Voici les différents liens discutés ce soir.
 Slides: https://codeurstroisrivieres.github.io/UnitTestsPresentation/#/
 
 XUnit : https://xunit.net/
+
+Moq : https://github.com/Moq/moq4/wiki/Quickstart
+
+Fluent Assertions : https://fluentassertions.com/
+
+The Art of Unit Testing (Roy Osherove) : http://artofunittesting.com/
