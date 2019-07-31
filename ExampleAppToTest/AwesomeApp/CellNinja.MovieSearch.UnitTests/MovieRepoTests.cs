@@ -9,7 +9,7 @@ using Moq;
 using RestSharp;
 using Xunit;
 
-namespace CellNinja.MovieSearch.Tests
+namespace CellNinja.MovieSearch.UnitTests
 {
     public class MovieRepoTests
     {
