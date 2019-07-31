@@ -1,10 +1,10 @@
 ### Pourquoi faire des tests unitaires
 
+- Faire des tests de régression
 - Découvrir les bugs plus tôt
-- Teste les cas spéciaux
-- Tests de régression
+- Tester les cas spéciaux
 - Ne plus avoir peur de changer du code legacy
-- Force à séparer les dépendences
+- Force à séparer les dépendances
 - Automatisation des tests
 
 Note:

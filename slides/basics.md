@@ -2,7 +2,7 @@
 
 - Facile à implémenter
 - Facile à exécuter
-- Rapide à exécuter
+- Rapide
 - Automatisé et répétable
 - Accessible à quiconque veut l'exécuter
 - Exempt de dépendances externes

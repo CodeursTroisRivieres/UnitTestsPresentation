@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,7 +17,10 @@ namespace CellNinja.Parser.Extractors
                 return new List<int> { int.Parse(numbers) };
             }
 
-            throw new NotImplementedException();
+            return numbers
+                .Split(",")
+                .Select(s => int.Parse(s))
+                .ToList();
         }
     }
 }

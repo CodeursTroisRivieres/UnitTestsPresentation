@@ -2,6 +2,9 @@
 
 <html>
   <div>
-    <img class="centeredImage" src="images/installXUnitUsingTemplate.png" width="1351" height="900" />
+    <video data-src="videos/installingXUnitWithTemplate.mp4"
+           type="video/mp4"
+           style="heigth: 100%; width: 100%;"
+           controls autoplay muted />
   </div>
 </html>
