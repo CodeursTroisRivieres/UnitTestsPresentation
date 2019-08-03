@@ -7,7 +7,7 @@ namespace CellNinja.Calculator
     {
         public int Add(int start, int toAdd)
         {
-            return start + toAdd;
+            return checked(start + toAdd);
         }
 
         public int Add(IEnumerable<int> numbers)
