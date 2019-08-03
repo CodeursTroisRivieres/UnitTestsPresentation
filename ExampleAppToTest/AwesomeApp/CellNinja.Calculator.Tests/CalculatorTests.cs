@@ -1,71 +1,49 @@
 using System;
-using System.Collections.Generic;
+using FluentAssertions;
 using Xunit;
 
 namespace CellNinja.Calculator.Tests
 {
-    public class CalculatorTest
+    public class CalculatorTests : IDisposable
     {
-        private Calculator calculator;
+        private Calculator _calculator;
 
-        public CalculatorTest()
+        public CalculatorTests()
         {
-            calculator = new Calculator();
+            _calculator = new Calculator();
         }
 
         [Theory]
-        [InlineData(0, 0, 0)]
         [InlineData(1, 1, 2)]
-        [InlineData(1, 2, 3)]
-        [InlineData(-1, 1, 0)]
-        [InlineData(Int32.MinValue, Int32.MaxValue, -1)]
+        [InlineData(0, 0, 0)]
+        [InlineData(-1, -1, -2)]
         [InlineData(Int32.MinValue, 1, -2147483647)]
-        [InlineData(Int32.MaxValue, -1, 2147483646)]
-        public void Add_TwoNumbers_ShouldReturnSum(int first, int second, int expected)
+        public void Add_OneAndOne_ShouldReturnTwo(int first, int second, int expected)
         {
+            //Arrange
+
             //Act
-            var result = calculator.Add(first, second);
+            var result = _calculator.Add(first, second);
 
             //Assert
-            Assert.Equal(expected, result);
+            result.Should().Be(expected);
         }
 
-        [Theory]
-        [InlineData(1, Int32.MaxValue)]
-        [InlineData(Int32.MaxValue, 1)]
-        [InlineData(Int32.MaxValue, Int32.MaxValue)]
-        [InlineData(-1, Int32.MinValue)]
-        [InlineData(Int32.MinValue, -1)]
-        [InlineData(Int32.MinValue, Int32.MinValue)]
-        public void Add_OneAndMaxValue_ShouldThrowOverflowException(int first, int second)
+        [Fact]
+        public void Add_MaxValuePlusOne_ShouldThrowOverflowException()
         {
+            //Arrange
+
             //Act
-            Action action = () => calculator.Add(first, second);
+            Action action = () => _calculator.Add(Int32.MaxValue, 1);
 
             //Assert
-            Assert.Throws<OverflowException>(action);
+            action.Should().Throw<OverflowException>();
         }
 
-        public static IEnumerable<object[]> ListOfNumbers =>
-            new List<object[]>
-            {
-                new object[] { new List<int> { 1, 1, 1 }, 3 },
-                new object[] { new List<int> { -1, -1, -1 }, -3 },
-                new object[] { new List<int> { -1, 1, -1 }, -1 },
-                new object[] { new List<int> { 0, -0, 0 }, 0 },
-                new object[] { new List<int> { Int32.MinValue, 0, 0 }, Int32.MinValue },
-                new object[] { new List<int> { Int32.MinValue, 1, -1 }, Int32.MinValue },
-            };
-
-        [Theory]
-        [MemberData(nameof(ListOfNumbers))]
-        public void Add_ListOfNumbers_ShouldReturnSum(IEnumerable<int> numbers, int expected)
+        public void Dispose()
         {
-            //Act
-            var result = calculator.Add(numbers);
-
-            //Assert
-            Assert.Equal(expected, result);
+            _calculator = null;
         }
     }
 }
